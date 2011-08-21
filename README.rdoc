@@ -8,4 +8,5 @@ Usage: parser.rb [options]
 
 = Examples:
 * ruby parser.rb --output output/ruby/ --template graph_object.rb.erb --extension .erb
+* ruby parser.rb --output output/php/ --template graph_object.php.erb --extension .php
 
