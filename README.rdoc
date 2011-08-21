@@ -1,3 +1,11 @@
+= Facebook-GraphAPI-Parser
+This piece of ruby software, contributed to _whyday 2011, will parse
+the official Facebook Documentation of the GraphAPI to auto-generate some
+files from givem template-file.
+
+* https://developers.facebook.com/docs/reference/api/
+* https://developers.facebook.com/docs/reference/api/user/
+
 = ruby parser.rb --help
 
 Usage: parser.rb [options]
