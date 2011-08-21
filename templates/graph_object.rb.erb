@@ -1,0 +1,44 @@
+<% @klass[:comment].each do |line| %>
+# <%= line %>
+<% end %>
+def Facebook::Graph::<%= @klass[:name] %>
+  #################################################
+  ### This Object hast the following attributes ###
+  #################################################
+
+<% @klass[:attributes].each do |attribute| %>
+<% attribute[:comment].each do |line| %>
+  # <%= line %>
+<% end %>
+  attr_accessor :<%= attribute[:name] %>
+
+<% end %>
+  ##################################################
+  ### This Object hast the following connections ###
+  ##################################################
+
+<% @klass[:connections].each do |connection| %>
+<% connection[:comment].each do |line| %>
+  # <%= line %>
+<% end %>
+  def <%= connection[:name] %>( params={} )
+    <%= connection[:name] %> = get_connections("<%= connection[:name] %>", params)
+    return map_connections <%= connection[:name] %>, :to => Facebook::Graph::<%= connection[:name].capitalize.chop %>
+  end
+
+<% end %>
+  #############################################################
+  ### This Object hast the following actions on connections ###
+  #############################################################
+
+<% @klass[:connection_actions].each do |action| %>
+<% action[:comment].each do |line| %>
+  # <%= line %>
+<% end %>
+  def <%= action[:name] %>
+  end
+
+<% end %>
+
+end
+

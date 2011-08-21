@@ -1,0 +1,44 @@
+<?php
+<% @klass[:comment].each do |line| %>
+# <%= line %>
+<% end %>
+class <%= @klass[:name].camelize(true) %>{
+  /*
+   * This Object hast the following attributes
+   */
+
+<% @klass[:attributes].each do |attribute| %>
+<% attribute[:comment].each do |line| %>
+  // <%= line %>
+<% end %>
+  public $<%= attribute[:name].camelize(false) %>;
+
+<% end %>
+  /*
+   * This Object hast the following connections
+   */
+
+<% @klass[:connections].each do |connection| %>
+<% connection[:comment].each do |line| %>
+  // <%= line %>
+<% end %>
+  public function <%= connection[:name].camelize(false) %>(){
+  }
+
+<% end %>
+  /*
+   *  This Object hast the following actions on connections
+   */
+
+<% @klass[:connection_actions].each do |action| %>
+<% action[:comment].each do |line| %>
+  # <%= line %>
+<% end %>
+  public function <%= action[:name].camelize(false) %>{
+  }
+
+<% end %>
+
+}
+?>
+
