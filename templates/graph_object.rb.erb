@@ -27,7 +27,11 @@ def Facebook::Graph::<%= @klass[:name] %>
 <% end %>
   def <%= connection[:name] %>( params={} )
     <%= connection[:name] %> = get_connections("<%= connection[:name] %>", params)
+<% if connection[:is_graph_object] %>
     return map_connections <%= connection[:name] %>, :to => Facebook::Graph::<%= connection[:name].capitalize.chop %>
+<% else %>
+    return map_connections <%= connection[:name] %>, :to => Facebook::Graph::Generic
+<% end %>
   end
 
 <% end %>

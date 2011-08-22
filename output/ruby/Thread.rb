@@ -13,7 +13,7 @@ def Facebook::Graph::Thread
   # Returns: string
   def id( params={} )
     id = get_connections("id", params)
-    return map_connections id, :to => Facebook::Graph::I
+    return map_connections id, :to => Facebook::Graph::Generic
   end
 
   # Fragment of the thread for use in thread lists
@@ -21,7 +21,7 @@ def Facebook::Graph::Thread
   # Returns: string
   def snippet( params={} )
     snippet = get_connections("snippet", params)
-    return map_connections snippet, :to => Facebook::Graph::Snippe
+    return map_connections snippet, :to => Facebook::Graph::Generic
   end
 
   # Timestamp of when the thread was last updated
@@ -29,7 +29,7 @@ def Facebook::Graph::Thread
   # Returns: string containing ISO-8601 date-time
   def updated_time( params={} )
     updated_time = get_connections("updated_time", params)
-    return map_connections updated_time, :to => Facebook::Graph::Updated_tim
+    return map_connections updated_time, :to => Facebook::Graph::Generic
   end
 
   # Number of messages in the thread
@@ -37,7 +37,7 @@ def Facebook::Graph::Thread
   # Returns: integer
   def message_count( params={} )
     message_count = get_connections("message_count", params)
-    return map_connections message_count, :to => Facebook::Graph::Message_coun
+    return map_connections message_count, :to => Facebook::Graph::Generic
   end
 
   # Number of unread messages in the thread
@@ -45,7 +45,7 @@ def Facebook::Graph::Thread
   # Returns: integer
   def unread_count( params={} )
     unread_count = get_connections("unread_count", params)
-    return map_connections unread_count, :to => Facebook::Graph::Unread_coun
+    return map_connections unread_count, :to => Facebook::Graph::Generic
   end
 
   # Thread tags
@@ -53,7 +53,7 @@ def Facebook::Graph::Thread
   # Returns: array of objects containing name
   def tags( params={} )
     tags = get_connections("tags", params)
-    return map_connections tags, :to => Facebook::Graph::Tag
+    return map_connections tags, :to => Facebook::Graph::Generic
   end
 
   # List of the thread participants
@@ -62,7 +62,7 @@ def Facebook::Graph::Thread
   # available)
   def participants( params={} )
     participants = get_connections("participants", params)
-    return map_connections participants, :to => Facebook::Graph::Participant
+    return map_connections participants, :to => Facebook::Graph::Generic
   end
 
   # List of former thread participants who have unsubscribed from the thread
@@ -71,7 +71,7 @@ def Facebook::Graph::Thread
   # available)
   def former_participants( params={} )
     former_participants = get_connections("former_participants", params)
-    return map_connections former_participants, :to => Facebook::Graph::Former_participant
+    return map_connections former_participants, :to => Facebook::Graph::Generic
   end
 
   # List of participants who have sent a message in the thread
@@ -80,7 +80,7 @@ def Facebook::Graph::Thread
   # available)
   def senders( params={} )
     senders = get_connections("senders", params)
-    return map_connections senders, :to => Facebook::Graph::Sender
+    return map_connections senders, :to => Facebook::Graph::Generic
   end
 
   # List of the message objects contained in this thread

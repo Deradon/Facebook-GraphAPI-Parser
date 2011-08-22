@@ -47,7 +47,7 @@ def Facebook::Graph::Status message
   # Returns: array of objects containing id and name
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   #############################################################

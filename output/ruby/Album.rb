@@ -82,7 +82,7 @@ def Facebook::Graph::Album
   # fields.
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   # The comments made on this album
@@ -99,7 +99,7 @@ def Facebook::Graph::Album
   # Returns: HTTP 302 redirect to URL of the album's cover picture
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   #############################################################

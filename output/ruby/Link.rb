@@ -78,7 +78,7 @@ def Facebook::Graph::Link
   # Returns: array of objects containing the id and name fields.
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   #############################################################

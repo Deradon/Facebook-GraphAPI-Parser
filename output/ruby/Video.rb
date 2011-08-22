@@ -74,7 +74,7 @@ def Facebook::Graph::Video
   # Returns: array of objects containing id and name fields.
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   # All of the comments on this video
@@ -91,7 +91,7 @@ def Facebook::Graph::Video
   # Returns: An HTTP 302 to the URL of the album's cover picture.
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   #############################################################

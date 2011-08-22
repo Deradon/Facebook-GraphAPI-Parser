@@ -14,7 +14,10 @@ class ParsedObject
       comments << a[:description].delete("\n")
       comments << "Permissions: " + a[:permissions].delete("\n")
       comments << "Returns: " + a[:returns].delete("\n")
-      @attributes << {:name => a[:name], :comment => comments} unless a[:name] == "Name"
+      @attributes << {
+        :name => a[:name],
+        :comment => comments
+      } unless a[:name] == "Name"
     end
   end
 
@@ -24,7 +27,11 @@ class ParsedObject
       comments << c[:description].delete("\n")
       comments << "Permissions: " + c[:permissions].delete("\n")
       comments << "Returns: " + c[:returns].delete("\n")
-      @connections << {:name => c[:name], :comment => comments} unless c[:name] == "Name"
+      @connections << {
+        :name => c[:name],
+        :comment => comments,
+        :is_graph_object => c[:is_graph_object]
+      } unless c[:name] == "Name"
     end
   end
 

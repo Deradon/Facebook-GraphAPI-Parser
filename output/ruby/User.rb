@@ -182,7 +182,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing account id, category and name field
   def accounts( params={} )
     accounts = get_connections("accounts", params)
-    return map_connections accounts, :to => Facebook::Graph::Account
+    return map_connections accounts, :to => Facebook::Graph::Generic
   end
 
   # The achievements for the user.
@@ -190,7 +190,7 @@ def Facebook::Graph::User
   # Returns: GET not yet implemented
   def achievements( params={} )
     achievements = get_connections("achievements", params)
-    return map_connections achievements, :to => Facebook::Graph::Achievement
+    return map_connections achievements, :to => Facebook::Graph::Generic
   end
 
   # The activities listed on the user's profile.
@@ -199,7 +199,7 @@ def Facebook::Graph::User
   # create_time fields.
   def activities( params={} )
     activities = get_connections("activities", params)
-    return map_connections activities, :to => Facebook::Graph::Activitie
+    return map_connections activities, :to => Facebook::Graph::Generic
   end
 
   # The photo albums this user has created.
@@ -215,7 +215,7 @@ def Facebook::Graph::User
   # Returns: array of app requests for the user within that app.
   def apprequests( params={} )
     apprequests = get_connections("apprequests", params)
-    return map_connections apprequests, :to => Facebook::Graph::Apprequest
+    return map_connections apprequests, :to => Facebook::Graph::Generic
   end
 
   # The books listed on the user's profile.
@@ -224,7 +224,7 @@ def Facebook::Graph::User
   # fields.
   def books( params={} )
     books = get_connections("books", params)
-    return map_connections books, :to => Facebook::Graph::Book
+    return map_connections books, :to => Facebook::Graph::Generic
   end
 
   # The places that the user has checked-into.
@@ -249,7 +249,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing id, name, and relationship fields.
   def family( params={} )
     family = get_connections("family", params)
-    return map_connections family, :to => Facebook::Graph::Famil
+    return map_connections family, :to => Facebook::Graph::Generic
   end
 
   # The user's wall.
@@ -257,7 +257,7 @@ def Facebook::Graph::User
   # Returns: array of Post objects containing (up to) the last 25 posts.
   def feed( params={} )
     feed = get_connections("feed", params)
-    return map_connections feed, :to => Facebook::Graph::Fee
+    return map_connections feed, :to => Facebook::Graph::Generic
   end
 
   # The user's friend lists.
@@ -265,7 +265,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing id and name fields of the friendlist.
   def friendlists( params={} )
     friendlists = get_connections("friendlists", params)
-    return map_connections friendlists, :to => Facebook::Graph::Friendlist
+    return map_connections friendlists, :to => Facebook::Graph::Generic
   end
 
   # The user's friends.
@@ -273,7 +273,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing friend id and name fields.
   def friends( params={} )
     friends = get_connections("friends", params)
-    return map_connections friends, :to => Facebook::Graph::Friend
+    return map_connections friends, :to => Facebook::Graph::Generic
   end
 
   # Games the user has added to the Arts and Entertainment section of their
@@ -282,7 +282,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing id, name, category, and created_time
   def games( params={} )
     games = get_connections("games", params)
-    return map_connections games, :to => Facebook::Graph::Game
+    return map_connections games, :to => Facebook::Graph::Generic
   end
 
   # The Groups that the user belongs to.
@@ -301,7 +301,7 @@ def Facebook::Graph::User
   # Returns: array of Post objects containing (up to) the last 25 posts.
   def home( params={} )
     home = get_connections("home", params)
-    return map_connections home, :to => Facebook::Graph::Hom
+    return map_connections home, :to => Facebook::Graph::Generic
   end
 
   # The Threads in this user's inbox.
@@ -309,7 +309,7 @@ def Facebook::Graph::User
   # Returns: array of thread objects
   def inbox( params={} )
     inbox = get_connections("inbox", params)
-    return map_connections inbox, :to => Facebook::Graph::Inbo
+    return map_connections inbox, :to => Facebook::Graph::Generic
   end
 
   # The interests listed on the user's profile.
@@ -318,7 +318,7 @@ def Facebook::Graph::User
   # create_time fields.
   def interests( params={} )
     interests = get_connections("interests", params)
-    return map_connections interests, :to => Facebook::Graph::Interest
+    return map_connections interests, :to => Facebook::Graph::Generic
   end
 
   # All the pages this user has liked.
@@ -327,7 +327,7 @@ def Facebook::Graph::User
   # fields.
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   # The user's posted links.
@@ -344,7 +344,7 @@ def Facebook::Graph::User
   # create_time fields.
   def movies( params={} )
     movies = get_connections("movies", params)
-    return map_connections movies, :to => Facebook::Graph::Movie
+    return map_connections movies, :to => Facebook::Graph::Generic
   end
 
   # The music listed on the user's profile.
@@ -353,7 +353,7 @@ def Facebook::Graph::User
   # create_time fields.
   def music( params={} )
     music = get_connections("music", params)
-    return map_connections music, :to => Facebook::Graph::Musi
+    return map_connections music, :to => Facebook::Graph::Generic
   end
 
   # The user's notes.
@@ -370,7 +370,7 @@ def Facebook::Graph::User
   # created_time,updated_time, title, link, application, unread.
   def notifications( params={} )
     notifications = get_connections("notifications", params)
-    return map_connections notifications, :to => Facebook::Graph::Notification
+    return map_connections notifications, :to => Facebook::Graph::Generic
   end
 
   # The messages in this user's outbox.
@@ -378,7 +378,7 @@ def Facebook::Graph::User
   # Returns: array of messages
   def outbox( params={} )
     outbox = get_connections("outbox", params)
-    return map_connections outbox, :to => Facebook::Graph::Outbo
+    return map_connections outbox, :to => Facebook::Graph::Generic
   end
 
   # The transactions the user placed with an application. See the Get Orders
@@ -388,7 +388,7 @@ def Facebook::Graph::User
   # application, created_time, and updated_time
   def payments( params={} )
     payments = get_connections("payments", params)
-    return map_connections payments, :to => Facebook::Graph::Payment
+    return map_connections payments, :to => Facebook::Graph::Generic
   end
 
   # The permissions that user has granted the application.
@@ -399,7 +399,7 @@ def Facebook::Graph::User
   # field  which is always permissions.
   def permissions( params={} )
     permissions = get_connections("permissions", params)
-    return map_connections permissions, :to => Facebook::Graph::Permission
+    return map_connections permissions, :to => Facebook::Graph::Generic
   end
 
   # Photos the user (or friend) is tagged in.
@@ -416,7 +416,7 @@ def Facebook::Graph::User
   # ?type=square | small | normal | large to request a different photo).
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   # The user's pokes.
@@ -425,7 +425,7 @@ def Facebook::Graph::User
   # fields.
   def pokes( params={} )
     pokes = get_connections("pokes", params)
-    return map_connections pokes, :to => Facebook::Graph::Poke
+    return map_connections pokes, :to => Facebook::Graph::Generic
   end
 
   # The user's own posts.
@@ -441,7 +441,7 @@ def Facebook::Graph::User
   # Returns: array of objects containing user, application, score and type.
   def scores( params={} )
     scores = get_connections("scores", params)
-    return map_connections scores, :to => Facebook::Graph::Score
+    return map_connections scores, :to => Facebook::Graph::Generic
   end
 
   # The user's status updates.
@@ -449,7 +449,7 @@ def Facebook::Graph::User
   # Returns: An array of Status message objects.
   def statuses( params={} )
     statuses = get_connections("statuses", params)
-    return map_connections statuses, :to => Facebook::Graph::Statuse
+    return map_connections statuses, :to => Facebook::Graph::Generic
   end
 
   # Posts the user is tagged in.
@@ -459,7 +459,7 @@ def Facebook::Graph::User
   # created_time, and updated_time
   def tagged( params={} )
     tagged = get_connections("tagged", params)
-    return map_connections tagged, :to => Facebook::Graph::Tagge
+    return map_connections tagged, :to => Facebook::Graph::Generic
   end
 
   # The television listed on the user's profile.
@@ -468,7 +468,7 @@ def Facebook::Graph::User
   # create_time fields.
   def television( params={} )
     television = get_connections("television", params)
-    return map_connections television, :to => Facebook::Graph::Televisio
+    return map_connections television, :to => Facebook::Graph::Generic
   end
 
   # The updates in this user's inbox.
@@ -476,7 +476,7 @@ def Facebook::Graph::User
   # Returns: array of messages
   def updates( params={} )
     updates = get_connections("updates", params)
-    return map_connections updates, :to => Facebook::Graph::Update
+    return map_connections updates, :to => Facebook::Graph::Generic
   end
 
   # The videos this user has been tagged in.

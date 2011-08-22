@@ -28,7 +28,7 @@ def Facebook::Graph::FriendList
   # Returns:  yes 
   def   name  ( params={} )
       name   = get_connections("  name  ", params)
-    return map_connections   name  , :to => Facebook::Graph::  name 
+    return map_connections   name  , :to => Facebook::Graph::Generic
   end
 
   #############################################################

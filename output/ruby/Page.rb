@@ -60,7 +60,7 @@ def Facebook::Graph::Page
   # Returns: array of Post objects.
   def feed( params={} )
     feed = get_connections("feed", params)
-    return map_connections feed, :to => Facebook::Graph::Fee
+    return map_connections feed, :to => Facebook::Graph::Generic
   end
 
   # The Page's profile picture.
@@ -68,7 +68,7 @@ def Facebook::Graph::Page
   # Returns: Returns a HTTP 302 with the URL of the user's profile picture.
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   # The settings for this page.
@@ -76,7 +76,7 @@ def Facebook::Graph::Page
   # Returns: array of objects containing setting and value fields.
   def settings( params={} )
     settings = get_connections("settings", params)
-    return map_connections settings, :to => Facebook::Graph::Setting
+    return map_connections settings, :to => Facebook::Graph::Generic
   end
 
   # The photos, videos, and posts in which the Page has been tagged.
@@ -84,7 +84,7 @@ def Facebook::Graph::Page
   # Returns: a heterogeneous array of Photo, Video or Post objects.
   def tagged( params={} )
     tagged = get_connections("tagged", params)
-    return map_connections tagged, :to => Facebook::Graph::Tagge
+    return map_connections tagged, :to => Facebook::Graph::Generic
   end
 
   # The Page's posted links.
@@ -124,7 +124,7 @@ def Facebook::Graph::Page
   # Returns: array of Status message objects.
   def statuses( params={} )
     statuses = get_connections("statuses", params)
-    return map_connections statuses, :to => Facebook::Graph::Statuse
+    return map_connections statuses, :to => Facebook::Graph::Generic
   end
 
   # The videos the Page has uploaded.
@@ -175,7 +175,7 @@ def Facebook::Graph::Page
   # custom_name, is_permanent, position, and is_non_connection_landing_tab.
   def tabs( params={} )
     tabs = get_connections("tabs", params)
-    return map_connections tabs, :to => Facebook::Graph::Tab
+    return map_connections tabs, :to => Facebook::Graph::Generic
   end
 
   # A list of the Page's Admins.
@@ -183,7 +183,7 @@ def Facebook::Graph::Page
   # Returns: array of objects containing id, name.
   def admins( params={} )
     admins = get_connections("admins", params)
-    return map_connections admins, :to => Facebook::Graph::Admin
+    return map_connections admins, :to => Facebook::Graph::Generic
   end
 
   # A list of users blocked from the Page.
@@ -191,7 +191,7 @@ def Facebook::Graph::Page
   # Returns: array of objects containing id, name.
   def blocked( params={} )
     blocked = get_connections("blocked", params)
-    return map_connections blocked, :to => Facebook::Graph::Blocke
+    return map_connections blocked, :to => Facebook::Graph::Generic
   end
 
   #############################################################

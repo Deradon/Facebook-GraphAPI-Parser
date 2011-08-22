@@ -68,7 +68,7 @@ def Facebook::Graph::Event
   # Returns: An array of Post objects.
   def feed( params={} )
     feed = get_connections("feed", params)
-    return map_connections feed, :to => Facebook::Graph::Fee
+    return map_connections feed, :to => Facebook::Graph::Generic
   end
 
   # All of the users who have been not yet responded to their invitation to this
@@ -77,7 +77,7 @@ def Facebook::Graph::Event
   # Returns: array containing objects with id, name and rsvp_status fields.
   def noreply( params={} )
     noreply = get_connections("noreply", params)
-    return map_connections noreply, :to => Facebook::Graph::Norepl
+    return map_connections noreply, :to => Facebook::Graph::Generic
   end
 
   # All of the users who have been responded "Maybe" to their invitation to this
@@ -86,7 +86,7 @@ def Facebook::Graph::Event
   # Returns: array containing objects with id, name and rsvp_status fields.
   def maybe( params={} )
     maybe = get_connections("maybe", params)
-    return map_connections maybe, :to => Facebook::Graph::Mayb
+    return map_connections maybe, :to => Facebook::Graph::Generic
   end
 
   # All of the users who have been invited to this event.
@@ -94,7 +94,7 @@ def Facebook::Graph::Event
   # Returns: array containing objects with id, name and rsvp_status fields.
   def invited( params={} )
     invited = get_connections("invited", params)
-    return map_connections invited, :to => Facebook::Graph::Invite
+    return map_connections invited, :to => Facebook::Graph::Generic
   end
 
   # All of the users who are attending this event.
@@ -102,7 +102,7 @@ def Facebook::Graph::Event
   # Returns: array containing objects with id, name and rsvp_status fields.
   def attending( params={} )
     attending = get_connections("attending", params)
-    return map_connections attending, :to => Facebook::Graph::Attendin
+    return map_connections attending, :to => Facebook::Graph::Generic
   end
 
   # All of the users who declined their invitation to this event.
@@ -110,7 +110,7 @@ def Facebook::Graph::Event
   # Returns: array containing JSON objects with id, name and rsvp_status fields.
   def declined( params={} )
     declined = get_connections("declined", params)
-    return map_connections declined, :to => Facebook::Graph::Decline
+    return map_connections declined, :to => Facebook::Graph::Generic
   end
 
   # The event's profile picture.
@@ -119,7 +119,7 @@ def Facebook::Graph::Event
   # ?type=small | normal | large to request a different photo).
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   #############################################################

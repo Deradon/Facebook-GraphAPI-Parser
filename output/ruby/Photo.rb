@@ -109,7 +109,7 @@ def Facebook::Graph::Photo
   # Returns: array of objects containing the id and name fields.
   def likes( params={} )
     likes = get_connections("likes", params)
-    return map_connections likes, :to => Facebook::Graph::Like
+    return map_connections likes, :to => Facebook::Graph::Generic
   end
 
   # The album-sized view of the photo.
@@ -118,7 +118,7 @@ def Facebook::Graph::Photo
   # Returns: HTTP 302 redirect to the URL of the picture
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   # The Users tagged in the photo.
@@ -127,7 +127,7 @@ def Facebook::Graph::Photo
   # Returns: Tags with names and IDs (if available).
   def tags( params={} )
     tags = get_connections("tags", params)
-    return map_connections tags, :to => Facebook::Graph::Tag
+    return map_connections tags, :to => Facebook::Graph::Generic
   end
 
   #############################################################

@@ -13,7 +13,7 @@ def Facebook::Graph::Message
   # Returns: string
   def id( params={} )
     id = get_connections("id", params)
-    return map_connections id, :to => Facebook::Graph::I
+    return map_connections id, :to => Facebook::Graph::Generic
   end
 
   # A timestamp of when this message was created
@@ -21,7 +21,7 @@ def Facebook::Graph::Message
   # Returns: string containing ISO-8601 date-time
   def created_time( params={} )
     created_time = get_connections("created_time", params)
-    return map_connections created_time, :to => Facebook::Graph::Created_tim
+    return map_connections created_time, :to => Facebook::Graph::Generic
   end
 
   # The sender of this message
@@ -29,7 +29,7 @@ def Facebook::Graph::Message
   # Returns: Object containing name and Facebook id (if available)
   def from( params={} )
     from = get_connections("from", params)
-    return map_connections from, :to => Facebook::Graph::Fro
+    return map_connections from, :to => Facebook::Graph::Generic
   end
 
   # A list of the message recipients
@@ -38,7 +38,7 @@ def Facebook::Graph::Message
   # available)
   def to( params={} )
     to = get_connections("to", params)
-    return map_connections to, :to => Facebook::Graph::T
+    return map_connections to, :to => Facebook::Graph::Generic
   end
 
   # The text of the message

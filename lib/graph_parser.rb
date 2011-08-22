@@ -13,7 +13,7 @@ class GraphParser
   # Parsing the main GraphAPI page
   def parse_base
     doc = Nokogiri::HTML(open(BASE_GRAPH_URL))
-    graph_objects = []
+    @graph_objects = []
 
     # Select all Graph Objects
     doc.css('h2#objects + div').each do |objects|
@@ -21,14 +21,14 @@ class GraphParser
         title = object.css(".title a").first.content
         url   = object.css(".title a").first.attributes["href"].content
         desc  = object.css(".snippet p").first.content
-        graph_objects << {
+        @graph_objects << {
           :title => title,
           :url   => url,
           :desc  => desc
         }
       end
     end
-    return parse_objects(graph_objects)
+    return parse_objects(@graph_objects)
   end
 
   # Parsing all given GraphObjects
@@ -93,6 +93,7 @@ class GraphParser
         :description => tds[1].content,
         :permissions => tds[2].content,
         :returns     => tds[3].content,
+        :is_graph_object => is_graph_object?(tds[0].content)
       }
     end if doc.css(".bodyText table").count >= 2
     return connections
@@ -126,6 +127,14 @@ class GraphParser
     comments << node.content.delete("\n") unless node.name == "h3"
 
     handle_h2_contents(node.next_element, connection, action, comments)
+  end
+
+  def is_graph_object?(obj)
+    @graph_objects.each do |o|
+      return true if o[:title] == obj.capitalize
+      return true if o[:title] == obj.chop.capitalize
+    end
+    return false
   end
 
 end

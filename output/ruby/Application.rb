@@ -44,7 +44,7 @@ def Facebook::Graph::Application
   # test users
   def accounts( params={} )
     accounts = get_connections("accounts", params)
-    return map_connections accounts, :to => Facebook::Graph::Account
+    return map_connections accounts, :to => Facebook::Graph::Generic
   end
 
   # The photo albums this page has created
@@ -61,7 +61,7 @@ def Facebook::Graph::Application
   # Returns: array of Post objects containing the last 25 posts.
   def feed( params={} )
     feed = get_connections("feed", params)
-    return map_connections feed, :to => Facebook::Graph::Fee
+    return map_connections feed, :to => Facebook::Graph::Generic
   end
 
   # Usage metrics for this application.
@@ -87,7 +87,7 @@ def Facebook::Graph::Application
   # Returns: An HTTP 302 with the location set to the picture URL.
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   # The applications's own posts.
@@ -113,7 +113,7 @@ def Facebook::Graph::Application
   # Returns: array of usage_stats and flushed_resources.
   def staticresources( params={} )
     staticresources = get_connections("staticresources", params)
-    return map_connections staticresources, :to => Facebook::Graph::Staticresource
+    return map_connections staticresources, :to => Facebook::Graph::Generic
   end
 
   # The application's status updates.
@@ -122,7 +122,7 @@ def Facebook::Graph::Application
   # Returns: array of Status message objects.
   def statuses( params={} )
     statuses = get_connections("statuses", params)
-    return map_connections statuses, :to => Facebook::Graph::Statuse
+    return map_connections statuses, :to => Facebook::Graph::Generic
   end
 
   # All of the subscriptions this application has for real-time notifications.
@@ -138,7 +138,7 @@ def Facebook::Graph::Application
   # Returns: array of Post, Photo or Video objects.
   def tagged( params={} )
     tagged = get_connections("tagged", params)
-    return map_connections tagged, :to => Facebook::Graph::Tagge
+    return map_connections tagged, :to => Facebook::Graph::Generic
   end
 
   # The translated strings for this application.
@@ -147,7 +147,7 @@ def Facebook::Graph::Application
   # locale.
   def translations( params={} )
     translations = get_connections("translations", params)
-    return map_connections translations, :to => Facebook::Graph::Translation
+    return map_connections translations, :to => Facebook::Graph::Generic
   end
 
   # Scores for the user and their friends.
@@ -155,7 +155,7 @@ def Facebook::Graph::Application
   # Returns: array of objects containing user, score, application and type.
   def scores( params={} )
     scores = get_connections("scores", params)
-    return map_connections scores, :to => Facebook::Graph::Score
+    return map_connections scores, :to => Facebook::Graph::Generic
   end
 
   # Achievements registered for the app.
@@ -163,7 +163,7 @@ def Facebook::Graph::Application
   # Returns: Not yet implemented
   def achievements( params={} )
     achievements = get_connections("achievements", params)
-    return map_connections achievements, :to => Facebook::Graph::Achievement
+    return map_connections achievements, :to => Facebook::Graph::Generic
   end
 
   #############################################################

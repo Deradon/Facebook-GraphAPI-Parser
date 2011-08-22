@@ -59,7 +59,7 @@ def Facebook::Graph::Group
   # Returns: array of Post objects.
   def feed( params={} )
     feed = get_connections("feed", params)
-    return map_connections feed, :to => Facebook::Graph::Fee
+    return map_connections feed, :to => Facebook::Graph::Generic
   end
 
   # All of the users who are members of this group (can only currently return
@@ -69,7 +69,7 @@ def Facebook::Graph::Group
   # also have an administrator field.
   def members( params={} )
     members = get_connections("members", params)
-    return map_connections members, :to => Facebook::Graph::Member
+    return map_connections members, :to => Facebook::Graph::Generic
   end
 
   # The profile picture of this group.
@@ -77,7 +77,7 @@ def Facebook::Graph::Group
   # Returns: HTTP 302 with the URL of the group's profile picture
   def picture( params={} )
     picture = get_connections("picture", params)
-    return map_connections picture, :to => Facebook::Graph::Pictur
+    return map_connections picture, :to => Facebook::Graph::Generic
   end
 
   # The docs in this group.
@@ -86,7 +86,7 @@ def Facebook::Graph::Group
   # updated_time, revision, can_edit, and can_delete fields.
   def docs( params={} )
     docs = get_connections("docs", params)
-    return map_connections docs, :to => Facebook::Graph::Doc
+    return map_connections docs, :to => Facebook::Graph::Generic
   end
 
   #############################################################
