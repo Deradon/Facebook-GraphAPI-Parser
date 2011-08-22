@@ -8,7 +8,9 @@ def Facebook::Graph::<%= @klass[:name] %>
 
 <% @klass[:attributes].each do |attribute| %>
 <% attribute[:comment].each do |line| %>
-  # <%= line %>
+<% line.truncate_split(76).each do |l| %>
+  # <%= l %>
+<% end %>
 <% end %>
   attr_accessor :<%= attribute[:name] %>
 
@@ -19,7 +21,9 @@ def Facebook::Graph::<%= @klass[:name] %>
 
 <% @klass[:connections].each do |connection| %>
 <% connection[:comment].each do |line| %>
-  # <%= line %>
+<% line.truncate_split(76).each do |l| %>
+  # <%= l %>
+<% end %>
 <% end %>
   def <%= connection[:name] %>( params={} )
     <%= connection[:name] %> = get_connections("<%= connection[:name] %>", params)
@@ -33,7 +37,9 @@ def Facebook::Graph::<%= @klass[:name] %>
 
 <% @klass[:connection_actions].each do |action| %>
 <% action[:comment].each do |line| %>
-  # <%= line %>
+<% line.truncate_split(76).each do |l| %>
+  # <%= l %>
+<% end %>
 <% end %>
   def <%= action[:name] %>
   end

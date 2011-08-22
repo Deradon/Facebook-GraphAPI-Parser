@@ -34,7 +34,8 @@ def Facebook::Graph::Message
 
   # A list of the message recipients
   # Permissions: read_mailbox
-  # Returns: Array of objects each containing name and Facebook id (if available)
+  # Returns: Array of objects each containing name and Facebook id (if
+  # available)
   def to( params={} )
     to = get_connections("to", params)
     return map_connections to, :to => Facebook::Graph::T

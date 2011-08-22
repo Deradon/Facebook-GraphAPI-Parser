@@ -11,12 +11,14 @@ def Facebook::Graph::Post
 
   # Information about the user who posted the message
   # Permissions: Requires access_token
-  # Returns: object containing the name and Facebook id of the user who posted the message
+  # Returns: object containing the name and Facebook id of the user who posted
+  # the message
   attr_accessor :from
 
   # Profiles mentioned or targeted in this post
   # Permissions: Requires access_token
-  # Returns: Contains in data an array of objects, each with the name and Facebook id of the user
+  # Returns: Contains in data an array of objects, each with the name and
+  # Facebook id of the user
   attr_accessor :to
 
   # The message
@@ -54,7 +56,8 @@ def Facebook::Graph::Post
   # Returns: string containing the URL
   attr_accessor :source
 
-  # A list of properties for an uploaded video, for example, the length of the video
+  # A list of properties for an uploaded video, for example, the length of the
+  # video
   # Permissions: Requires access_token
   # Returns: array of objects containing the name and text
   attr_accessor :properties
@@ -64,14 +67,34 @@ def Facebook::Graph::Post
   # Returns: string
   attr_accessor :icon
 
-  # A list of available actions on the post (including commenting, liking, and an optional app-specified action)
+  # A list of available actions on the post (including commenting, liking, and
+  # an optional app-specified action)
   # Permissions: Requires access_token
   # Returns: array of objects containing the name and link
   attr_accessor :actions
 
   # The privacy settings of the Post
   # Permissions: read_stream
-  # Returns: object containing the value field and optional friends, networks, allow and deny fields.The value field may specify one of the following strings: EVERYONE, ALL_FRIENDS, NETWORKS_FRIENDS, FRIENDS_OF_FRIENDS, CUSTOM .The friends field must be specified if value is set to CUSTOM and contain one of the following strings: EVERYONE, NETWORKS_FRIENDS (when the object can be seen by networks and friends), FRIENDS_OF_FRIENDS, ALL_FRIENDS, SOME_FRIENDS, SELF, or NO_FRIENDS (when the object can be seen by a network only).The networks field may contain a comma-separated list of network IDs that can see the object, or 1 for all of a user's network.The allow field must be specified when the friends value is set to SOME_FRIENDS and must specify a comma-separated list of user IDs and friend list IDs that 'can' see the post.The deny field may be specified if the friends field is set to SOME_FRIENDS and must specify a comma-separated list of user IDs and friend list IDs that 'cannot' see the post.Note: This privacy setting only applies to posts to the current or specified user's own Wall. Facebook ignores this setting for targeted Wall posts (when the user is writing on the Wall of a friend, Page, event, group connected to the user). Consistent with behavior on Facebook, all targeted posts are viewable by anyone who can see the target's Wall. Privacy Policy: Any non-default privacy setting must be intentionally chosen by the user
+  # Returns: object containing the value field and optional friends, networks,
+  # allow and deny fields.The value field may specify one of the following
+  # strings: EVERYONE, ALL_FRIENDS, NETWORKS_FRIENDS, FRIENDS_OF_FRIENDS, CUSTOM
+  # .The friends field must be specified if value is set to CUSTOM and contain
+  # one of the following strings: EVERYONE, NETWORKS_FRIENDS (when the object
+  # can be seen by networks and friends), FRIENDS_OF_FRIENDS, ALL_FRIENDS,
+  # SOME_FRIENDS, SELF, or NO_FRIENDS (when the object can be seen by a network
+  # only).The networks field may contain a comma-separated list of network IDs
+  # that can see the object, or 1 for all of a user's network.The allow field
+  # must be specified when the friends value is set to SOME_FRIENDS and must
+  # specify a comma-separated list of user IDs and friend list IDs that 'can'
+  # see the post.The deny field may be specified if the friends field is set to
+  # SOME_FRIENDS and must specify a comma-separated list of user IDs and friend
+  # list IDs that 'cannot' see the post.Note: This privacy setting only applies
+  # to posts to the current or specified user's own Wall. Facebook ignores this
+  # setting for targeted Wall posts (when the user is writing on the Wall of a
+  # friend, Page, event, group connected to the user). Consistent with behavior
+  # on Facebook, all targeted posts are viewable by anyone who can see the
+  # target's Wall. Privacy Policy: Any non-default privacy setting must be
+  # intentionally chosen by the user
   attr_accessor :privacy
 
   # A string indicating the type for this post (including link, photo, video)
@@ -81,12 +104,15 @@ def Facebook::Graph::Post
 
   # Likes for this post
   # Permissions: Requires access_token
-  # Returns: Structure containing a data object and the number of total likes, with data containing an array of objects, each with the name and Facebook id of the user who liked the post
+  # Returns: Structure containing a data object and the number of total likes,
+  # with data containing an array of objects, each with the name and Facebook id
+  # of the user who liked the post
   attr_accessor :likes
 
   # Comments for this post
   # Permissions: read_stream
-  # Returns: Structure containing a data object containing an array of objects, each with the id, from, message, and created_time for each comment
+  # Returns: Structure containing a data object containing an array of objects,
+  # each with the id, from, message, and created_time for each comment
   attr_accessor :comments
 
   # The Facebook object id for an uploaded photo or video
@@ -111,7 +137,8 @@ def Facebook::Graph::Post
 
   # Location and language restrictions for Page posts only
   # Permissions: manage_pages
-  # Returns: object containing comma separated lists of valid country , city , region and locale
+  # Returns: object containing comma separated lists of valid country , city ,
+  # region and locale
   attr_accessor :targeting
 
   ##################################################
@@ -122,26 +149,32 @@ def Facebook::Graph::Post
   ### This Object hast the following actions on connections ###
   #############################################################
 
-  # You can write to the POST_ID/comments connection to post a comment to the post by issuing an HTTP POST request with the publish_stream permission and following parameters.
-  #  Parameter     Description     Type    Required    message      Comment  text      string      yes   
+  # You can write to the POST_ID/comments connection to post a comment to the
+  # post by issuing an HTTP POST request with the publish_stream permission and
+  # following parameters.
+  #  Parameter     Description     Type    Required    message      Comment 
+  # text      string      yes   
   # If the write is successful, you get the following return.
   #  Name     Description     Type    id     The new comment ID     string   
   def create_comments
   end
 
-  # You can delete a comment by issuing an HTTP DELETE request to the COMMENT_ID object with the publish_stream permission.
+  # You can delete a comment by issuing an HTTP DELETE request to the COMMENT_ID
+  # object with the publish_stream permission.
   # If the delete is successful, you get the following return.
   #  Description     Type    If the delete succeeded     boolean   
   def delete_comments
   end
 
-  # You can like a Post by issuing a HTTP POST request to the POST_ID/likes connection with the  publish_stream permission. No parameters necessary.
+  # You can like a Post by issuing a HTTP POST request to the POST_ID/likes
+  # connection with the  publish_stream permission. No parameters necessary.
   # If the write is successful, you get the following return.
   #  Description     Type    If the like succeeded     boolean   
   def create_likes
   end
 
-  # You can unlike a post by issuing an HTTP DELETE request to the POST_ID/like connection with the publish_stream permission.
+  # You can unlike a post by issuing an HTTP DELETE request to the POST_ID/like
+  # connection with the publish_stream permission.
   # If the delete is successful, you get the following return.
   #  Description     Type    If the unlike succeeded     boolean   
   # Vor etwa einem Monat aktualisiert

@@ -26,7 +26,8 @@ def Facebook::Graph::Link
 
   # All of the comments on this link
   # Permissions: read_stream
-  # Returns: Array of objects containing id, from, message and created_time fields
+  # Returns: Array of objects containing id, from, message and created_time
+  # fields
   attr_accessor :comments
 
   # A description of the link (appears beneath the link caption)
@@ -65,7 +66,8 @@ def Facebook::Graph::Link
 
   # All of the comments on this link.
   # Permissions: read_stream
-  # Returns: array of objects containing id, from, message and created_time fields.
+  # Returns: array of objects containing id, from, message and created_time
+  # fields.
   def comments( params={} )
     comments = get_connections("comments", params)
     return map_connections comments, :to => Facebook::Graph::Comment
@@ -83,8 +85,11 @@ def Facebook::Graph::Link
   ### This Object hast the following actions on connections ###
   #############################################################
 
-  # You can comment on a Link by issuing an HTTP POST request to /LINK_ID/comments with the publish_stream permission and following parameters.
-  #  Parameter     Description     Type    Required    message      Comment  text      string      yes   
+  # You can comment on a Link by issuing an HTTP POST request to
+  # /LINK_ID/comments with the publish_stream permission and following
+  # parameters.
+  #  Parameter     Description     Type    Required    message      Comment 
+  # text      string      yes   
   # If the create is successful, you get the following return.
   #  Name     Description     Type    id     The new comment ID     string   
   # Vor etwa einem Monat aktualisiert

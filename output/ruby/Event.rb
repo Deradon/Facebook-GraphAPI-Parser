@@ -26,12 +26,16 @@ def Facebook::Graph::Event
 
   # The start time of the event, as you want it to be displayed on facebook
   # Permissions: generic access_token, user_events or friends_events
-  # Returns: string containing an ISO-8601 formatted date/time or a UNIX timestamp; if it contains a time zone (not recommended), it will be converted to Pacific time before being stored and displayed
+  # Returns: string containing an ISO-8601 formatted date/time or a UNIX
+  # timestamp; if it contains a time zone (not recommended), it will be
+  # converted to Pacific time before being stored and displayed
   attr_accessor :start_time
 
   # The end time of the event, as you want it to be displayed on facebook
   # Permissions: generic access_token, user_events or friends_events
-  # Returns: string containing an ISO-8601 formatted date/time or a UNIX timestamp; if it contains a time zone (not recommended), it will be converted to Pacific time before being stored and displayed
+  # Returns: string containing an ISO-8601 formatted date/time or a UNIX
+  # timestamp; if it contains a time zone (not recommended), it will be
+  # converted to Pacific time before being stored and displayed
   attr_accessor :end_time
 
   # The location for this event
@@ -41,7 +45,8 @@ def Facebook::Graph::Event
 
   # The location of this event
   # Permissions: generic access_token, user_events or friends_events
-  # Returns: object containing street, city, state, zip, country, latitude, and longitude fields
+  # Returns: object containing street, city, state, zip, country, latitude, and
+  # longitude fields
   attr_accessor :venue
 
   # The visibility of this event
@@ -66,7 +71,8 @@ def Facebook::Graph::Event
     return map_connections feed, :to => Facebook::Graph::Fee
   end
 
-  # All of the users who have been not yet responded to their invitation to this event.
+  # All of the users who have been not yet responded to their invitation to this
+  # event.
   # Permissions: any valid access_token, user_events or friends_events
   # Returns: array containing objects with id, name and rsvp_status fields.
   def noreply( params={} )
@@ -74,7 +80,8 @@ def Facebook::Graph::Event
     return map_connections noreply, :to => Facebook::Graph::Norepl
   end
 
-  # All of the users who have been responded "Maybe" to their invitation to this event.
+  # All of the users who have been responded "Maybe" to their invitation to this
+  # event.
   # Permissions: any valid access_token, user_events or friends_events
   # Returns: array containing objects with id, name and rsvp_status fields.
   def maybe( params={} )
@@ -108,7 +115,8 @@ def Facebook::Graph::Event
 
   # The event's profile picture.
   # Permissions: any valid access_token, user_events or friends_events
-  # Returns: Returns a HTTP 302 with the URL of the event's picture (use ?type=small | normal | large to request a different photo).
+  # Returns: Returns a HTTP 302 with the URL of the event's picture (use
+  # ?type=small | normal | large to request a different photo).
   def picture( params={} )
     picture = get_connections("picture", params)
     return map_connections picture, :to => Facebook::Graph::Pictur
@@ -121,9 +129,13 @@ def Facebook::Graph::Event
   def links_feed
   end
 
-  # You can post a link on the event's wall by issuing an HTTP POST request to EVENT_ID/feed with the publish_stream permissions and the following parameters.
-  #  Parameter     Description     Type    Required     link       Link URL      string      yes     message       Link message      string      no   
-  # The other fields are taken from the metadata of the page URL given in the 'link' param.
+  # You can post a link on the event's wall by issuing an HTTP POST request to
+  # EVENT_ID/feed with the publish_stream permissions and the following
+  # parameters.
+  #  Parameter     Description     Type    Required     link       Link URL     
+  # string      yes     message       Link message      string      no   
+  # The other fields are taken from the metadata of the page URL given in the
+  # 'link' param.
   # If the create is successful, you get the following return.
   #  Name     Description     Type    id     The new link ID     string   
   # 
@@ -133,8 +145,16 @@ def Facebook::Graph::Event
   def posts_feed
   end
 
-  # You can create a post on an Event's wall by issuing an HTTP POST request to EVENT_ID/feed with the publish_stream permissions and the following parameters.
-  #  Parameter     Description     Type    Required     message       Post message      string      yes     link       Post URL      string      yes     picture       Post thumbnail image      string      no     name       Post name      string      no     caption       Post caption      string      no     description       Post description      string      no     actions       Post actions      array of objects containing name and link      no     privacy       Post privacy settings      string      no   
+  # You can create a post on an Event's wall by issuing an HTTP POST request to
+  # EVENT_ID/feed with the publish_stream permissions and the following
+  # parameters.
+  #  Parameter     Description     Type    Required     message       Post
+  # message      string      yes     link       Post URL      string      yes   
+  #  picture       Post thumbnail image      string      no     name       Post
+  # name      string      no     caption       Post caption      string      no 
+  #    description       Post description      string      no     actions      
+  # Post actions      array of objects containing name and link      no    
+  # privacy       Post privacy settings      string      no   
   # If the create is successful, you get the following return.
   #  Name     Description     Type    id     The new post ID     string   
   # 
@@ -144,10 +164,14 @@ def Facebook::Graph::Event
   def statuses_feed
   end
 
-  # You can post a status message on an Event's wall by issuing an HTTP POST request to EVENT_ID/feed with the publish_stream permissions and the following parameters.
-  #  Parameter     Description     Type    Required     message       Status Message content      string      yes   
+  # You can post a status message on an Event's wall by issuing an HTTP POST
+  # request to EVENT_ID/feed with the publish_stream permissions and the
+  # following parameters.
+  #  Parameter     Description     Type    Required     message       Status
+  # Message content      string      yes   
   # If the create is successful, you get the following return.
-  #  Name     Description     Type    id     The new status message ID     string   
+  #  Name     Description     Type    id     The new status message ID    
+  # string   
   # 
   def create_feed
   end

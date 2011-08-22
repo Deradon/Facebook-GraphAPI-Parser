@@ -2,12 +2,24 @@
 class String
 
   # Truncates string to a maximum of 'count' characters
-  def truncate(count = 80)
-    return self if length < count
-    shortened = self[0, count]
-    splitted  = shortened.split(/\s/)
-    words     = splitted.length
-    splitted[0, words-1].join(" ") + ' ...'
+  def truncate(max_length = 80)
+    self.match(/(.{0,#{max_length}})(?:$|\s)/)[1]
+  end
+
+  # Returns Array of String with defined maxium length of characters
+  # TODO implement
+  def truncate_split(max_length = 80)
+    result = []
+    copy   = self.clone
+
+    while copy.size > max_length do
+      line = copy.truncate(max_length)
+      result << line
+      copy.slice!(0..line.size)
+    end
+
+    result << copy
+    return result
   end
 
   # Opposite of #capitalize (uppercase first character)

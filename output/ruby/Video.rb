@@ -61,7 +61,8 @@ def Facebook::Graph::Video
 
   # All of the comments on this video
   # Permissions: user_videos
-  # Returns: array of objects containing id, from, message, created_time, and likes fields
+  # Returns: array of objects containing id, from, message, created_time, and
+  # likes fields
   attr_accessor :comments
 
   ##################################################
@@ -78,7 +79,8 @@ def Facebook::Graph::Video
 
   # All of the comments on this video
   # Permissions: user_videos
-  # Returns: array of objects containing id, from, message, created_time, and likes fields.
+  # Returns: array of objects containing id, from, message, created_time, and
+  # likes fields.
   def comments( params={} )
     comments = get_connections("comments", params)
     return map_connections comments, :to => Facebook::Graph::Comment
@@ -96,20 +98,25 @@ def Facebook::Graph::Video
   ### This Object hast the following actions on connections ###
   #############################################################
 
-  # You can like a Video by issuing an HTTP POST request to VIDEO_ID/likes with the publish_stream permission. No parameters necessary.
+  # You can like a Video by issuing an HTTP POST request to VIDEO_ID/likes with
+  # the publish_stream permission. No parameters necessary.
   # If the create is successful, you get the following return.
   #  Description     Type    If the create succeeded.     boolean   
   def create_likes
   end
 
-  # You can unlike a Video by issuing an HTTP DELETE request to VIDEO_ID/like with the publish_stream permission.
+  # You can unlike a Video by issuing an HTTP DELETE request to VIDEO_ID/like
+  # with the publish_stream permission.
   # If the delete is successful, you get the following return.
   #  Description     Type    If the unlike succeeded     boolean   
   def delete_likes
   end
 
-  # You can comment on a Video by issuing an HTTP POST request to VIDEO_ID/comments with the publish_stream permission and following parameters.
-  #  Parameter     Description     Type    Required    message      Comment  text      string      yes   
+  # You can comment on a Video by issuing an HTTP POST request to
+  # VIDEO_ID/comments with the publish_stream permission and following
+  # parameters.
+  #  Parameter     Description     Type    Required    message      Comment 
+  # text      string      yes   
   # If the create is successful, you get the following return.
   #  Name     Description     Type    id     The new comment ID     string   
   # 

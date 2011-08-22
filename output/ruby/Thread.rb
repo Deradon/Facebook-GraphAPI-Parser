@@ -58,7 +58,8 @@ def Facebook::Graph::Thread
 
   # List of the thread participants
   # Permissions: read_mailbox
-  # Returns: array of objects each containing name, email, and Facebook id (if available)
+  # Returns: array of objects each containing name, email, and Facebook id (if
+  # available)
   def participants( params={} )
     participants = get_connections("participants", params)
     return map_connections participants, :to => Facebook::Graph::Participant
@@ -66,7 +67,8 @@ def Facebook::Graph::Thread
 
   # List of former thread participants who have unsubscribed from the thread
   # Permissions: read_mailbox
-  # Returns: array of objects each containing name, email, and Facebook id (if available)
+  # Returns: array of objects each containing name, email, and Facebook id (if
+  # available)
   def former_participants( params={} )
     former_participants = get_connections("former_participants", params)
     return map_connections former_participants, :to => Facebook::Graph::Former_participant
@@ -74,7 +76,8 @@ def Facebook::Graph::Thread
 
   # List of participants who have sent a message in the thread
   # Permissions: read_mailbox
-  # Returns: array of objects each containing name, email, and Facebook id (if available)
+  # Returns: array of objects each containing name, email, and Facebook id (if
+  # available)
   def senders( params={} )
     senders = get_connections("senders", params)
     return map_connections senders, :to => Facebook::Graph::Sender

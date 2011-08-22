@@ -47,13 +47,15 @@ def Facebook::Graph::Comment
   ### This Object hast the following actions on connections ###
   #############################################################
 
-  # You can like a comment by issuing an HTTP POST request to COMMENT_ID/likes with the publish_stream permission. No parameters necessary.
+  # You can like a comment by issuing an HTTP POST request to COMMENT_ID/likes
+  # with the publish_stream permission. No parameters necessary.
   # If the create is successful, you get the following return.
   #  Description     Type    If the create succeeded.     boolean   
   def create_likes
   end
 
-  # You can unlike a comment by issuing an HTTP DELETE request to COMMENT_ID/likes with the publish_stream permission.
+  # You can unlike a comment by issuing an HTTP DELETE request to
+  # COMMENT_ID/likes with the publish_stream permission.
   # If the delete is successful, you get the following return.
   #  Description     Type    If the unlike succeeded     boolean   
   # Vor etwa 2 Monaten aktualisiert

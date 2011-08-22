@@ -19,9 +19,12 @@ def Facebook::Graph::Checkin
   # Returns: array of objects containing the id and name fields
   attr_accessor :tags
 
-  # Information about the Facebook Page that represents the location of the checkin
+  # Information about the Facebook Page that represents the location of the
+  # checkin
   # Permissions: user_checkins
-  # Returns: object containing the Page id, name, and location; location includes the specific latitude and longitude along with information about the postal addresses, if available
+  # Returns: object containing the Page id, name, and location; location
+  # includes the specific latitude and longitude along with information about
+  # the postal addresses, if available
   attr_accessor :place
 
   # Information about the application that made the checkin
@@ -46,7 +49,8 @@ def Facebook::Graph::Checkin
 
   # All of the comments on this link
   # Permissions: user_checkins
-  # Returns: Array of objects containing id, from, message and created_time fields
+  # Returns: Array of objects containing id, from, message and created_time
+  # fields
   attr_accessor :comments
 
   # The type of this object; always returns checkin
@@ -60,7 +64,8 @@ def Facebook::Graph::Checkin
 
   # All of the comments on this checkin.
   # Permissions: any valid access_token
-  # Returns: array of objects containing id, from, message and created_time fields.
+  # Returns: array of objects containing id, from, message and created_time
+  # fields.
   def comments( params={} )
     comments = get_connections("comments", params)
     return map_connections comments, :to => Facebook::Graph::Comment
@@ -78,20 +83,25 @@ def Facebook::Graph::Checkin
   ### This Object hast the following actions on connections ###
   #############################################################
 
-  # You can write to the CHECKIN_ID/comments connection to post a comment to the checkin by issuing an HTTP POST request with the publish_stream permission and following parameters.
-  #  Parameter     Description     Type    Required    message      Comment  text      string      yes   
+  # You can write to the CHECKIN_ID/comments connection to post a comment to the
+  # checkin by issuing an HTTP POST request with the publish_stream permission
+  # and following parameters.
+  #  Parameter     Description     Type    Required    message      Comment 
+  # text      string      yes   
   # If the write is successful, you get the following return.
   #  Name     Description     Type    id     The new comment ID     string   
   def create_comments
   end
 
-  # You can like a checkin by issuing a HTTP POST request to CHECKIN_ID/likes connection with the  publish_stream permission. No parameters are necessary.
+  # You can like a checkin by issuing a HTTP POST request to CHECKIN_ID/likes
+  # connection with the  publish_stream permission. No parameters are necessary.
   # If the write is successful, you get the following return.
   #  Description     Type    If the like succeeded     boolean   
   def create_likes
   end
 
-  # You can unlike an checkin by issuing an HTTP DELETE request to the CHECKIN_ID/like connection with the publish_stream permission.
+  # You can unlike an checkin by issuing an HTTP DELETE request to the
+  # CHECKIN_ID/like connection with the publish_stream permission.
   # If the delete is successful, you get the following return.
   #  Description     Type    If the unlike succeeded     boolean   
   # Vor etwa einem Monat aktualisiert
