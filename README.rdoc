@@ -6,15 +6,15 @@ files from givem template-file.
 * https://developers.facebook.com/docs/reference/api/
 * https://developers.facebook.com/docs/reference/api/user/
 
-= ruby parser.rb --help
-
-Usage: parser.rb [options]
+= Usage:
+  $ ruby parser.rb --help
+  Usage: parser.rb [options]
     -o, --output PATH                Directory where to save parsed files
     -t, --template FILE              Which template to use
     -e, --extension STRING           Which file extension to use for new files
     -h, --help                       Display this screen
 
 = Examples:
-* ruby parser.rb --output output/ruby/ --template graph_object.rb.erb --extension .erb
-* ruby parser.rb --output output/php/ --template graph_object.php.erb --extension .php
+  $ ruby parser.rb --output output/ruby/ --template graph_object.rb.erb --extension .erb
+  $ ruby parser.rb --output output/php/ --template graph_object.php.erb --extension .php
 
